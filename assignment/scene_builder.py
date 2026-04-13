@@ -85,29 +85,90 @@ cmds.move(building_x, building_height / 2.0, building_z, building)
 #   - Name the object meaningfully with the 'name' parameter or cmds.rename().
 #   - Position it so it sits on the ground (not floating or buried).
 # ---------------------------------------------------------------------------
+# Cool Tree (Cylinder and Sphere)
 
+tree_trunk_height = 3
+tree_trunk_radius = 0.5
+tree_x_position = 5
+tree_z_position = 5
+
+tree_trunk = cmds.polyCylinder(
+    name="tree_trunk",
+    height=tree_trunk_height,
+    radius=tree_trunk_radius
+)[0]
+
+cmds.move(tree_x_position, tree_trunk_height / 2, tree_z_position, tree_trunk)
+
+tree_top_radius = 2
+
+tree_top = cmds.polySphere(
+    name="tree_top",
+    radius=tree_top_radius
+)[0]
+
+cmds.move(tree_x_position, tree_trunk_height + 1.5, tree_z_position, tree_top)
 
 # ---------------------------------------------------------------------------
-# TODO: Add Object 3
+# Awsome Bench (Basically a Horizontoly streched Cube)
+
+bench_width = 4
+bench_height = 0.5
+bench_depth = 1
+bench_x_position = 0
+bench_z_position = -5
+
+bench = cmds.polyCube(
+    name="bench",
+    width=bench_width,
+    height=bench_height,
+    depth=bench_depth
+)[0]
+
+cmds.move(bench_x_position, bench_height / 2, bench_z_position, bench) 
+
 # ---------------------------------------------------------------------------
+# Radical Lamp Post (Cylinder + Sphere)
 
+lamp_post_height = 5
+lamp_post_radius = 0.2
+lamp_x_position = -5
+lamp_z_position = -5
+
+lamp_post = cmds.polyCylinder(
+    name="lamp_post",
+    height=lamp_post_height,
+    radius=lamp_post_radius
+)[0]
+
+cmds.move(lamp_x_position, lamp_post_height / 2, lamp_z_position, lamp_post)
+
+lamp_light_radius = 0.5
+
+lamp_light = cmds.polySphere(
+    name="lamp_light",
+    radius=lamp_light_radius
+)[0]
+
+cmds.move(lamp_x_position, lamp_post_height, lamp_z_position, lamp_light)
 
 # ---------------------------------------------------------------------------
-# TODO: Add Object 4
-# ---------------------------------------------------------------------------
+# Person Stand In (Cube Streched Vertically)
 
+guy_width = 2
+guy_height = 3.3
+guy_depth = 1
+guy_x_position = -1
+guy_z_position = -3.9
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 5
-# ---------------------------------------------------------------------------
+guy = cmds.polyCube(
+    name="guy",
+    width=guy_width,
+    height=guy_height,
+    depth=guy_depth
+)[0]
 
-
-# ---------------------------------------------------------------------------
-# TODO (Optional): Add more objects to make your scene more interesting!
-# Consider: trees, lamp posts, fences, vehicles, animals, etc.
-# ---------------------------------------------------------------------------
-
-
+cmds.move(guy_x_position, guy_height / 2, guy_z_position, guy)
 # ---------------------------------------------------------------------------
 # Frame All -- so the whole scene is visible in the viewport.
 # (This is provided for you -- do not remove.)
