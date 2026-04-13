@@ -77,14 +77,6 @@ building = cmds.polyCube(
 # Raise the building so its base sits on the ground plane.
 cmds.move(building_x, building_height / 2.0, building_z, building)
 
-# ---------------------------------------------------------------------------
-# TODO: Add Object 2
-# Create a second object using a DIFFERENT primitive type than the cube above.
-# Remember to:
-#   - Use descriptive variable names for size and position.
-#   - Name the object meaningfully with the 'name' parameter or cmds.rename().
-#   - Position it so it sits on the ground (not floating or buried).
-# ---------------------------------------------------------------------------
 # Cool Tree (Cylinder and Sphere)
 
 tree_trunk_height = 3
